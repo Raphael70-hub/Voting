@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/"><img src="images/logo.png" class="logo" alt="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa-solid fa-bars navbar-icon"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#votingProcess">Voting Process</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#eligibilityCriteria">Eligibility Criteria</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#testimonials">Testimonials</a>
+                  </li>
+                  <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Account
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item btn dropdown-button" href="signin.html">SIGN IN</a></li>
+                      <hr>
+                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user dropdown-icon"></i> My Account</a></li>
+                      <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-box dropdown-icon"></i> Order</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="fa-regular fa-heart dropdown-icon"></i> Saved items</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.html"> <i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="7000">
+                    <!-- <img src="images/samsung-galaxy.jpg" class="d-block w-100" alt="samsung-galaxy"> -->
+                    <div class="image-overlay">
+                        <div class="carousel-caption">
+                        <h2>Empower Your Voice, Shape Your Future!</h2>
+                        <button class="btn btn-success py-2 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">VOTE NOW</button>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="carousel-item" data-bs-interval="7000">
+                    <!-- <img src="images/iphone & ipad.jpg" class="d-block w-100" alt="iphone & ipad"> -->
+                    <div class="image-overlay">
+                        <div class="carousel-caption">
+                          <h2>Voting is not only our right—it is our power.</h2>
+                          <button class="btn btn-success py-2 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">VOTE NOW</button>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="carousel-item" data-bs-interval="7000">
+                <!-- <img src="images/headphones.jpg" class="d-block w-100" alt="headphones"> -->
+                <div class="image-overlay">
+                    <div class="carousel-caption">
+                      <h2>Democracy is not a spectator sport. Get in the game—vote!</h2>
+                      <button class="btn btn-success py-2 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">VOTE NOW</button>
+                    </div>
+                </div>
+
+              </div>
+              <!-- Modal -->
+              <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Select your Location</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Location
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="/vote/<%= lagos %>#votingLocations">Lagos</a></li>
+                          <li><a class="dropdown-item" href="/vote/<%=abuja%>#votingLocations">Abuja</a></li>
+                          <li><a class="dropdown-item" href="/vote/<%=ibadan%>#votingLocations">Ibadan</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </header>
+
+    <main>
+        <div class="all-categories text-center">
+            <hr class="half-hr"> <h2 class="category-heading text-success" style="font-weight: 900;">Importance of Voting</h2> <hr class="half-hr">
+        </div>
+
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Expressing Civic Duty</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">Voting is a way for citizens to actively participate in the democratic process and fulfill their civic duty.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Ensuring Representation</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">By voting, individuals contribute to the selection of representatives who will make decisions on their behalf. Voting ensures that the government reflects the will of the people.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Influencing Policies</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">Voting allows citizens to influence the development and implementation of policies. It is a means of expressing preferences on issues that matter to them.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Protecting Rights</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">Voting is a way to protect and exercise fundamental rights. It is a tool to ensure that the government respects and upholds the rights of its citizens.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Shaping the Future</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">Voting enables individuals to contribute to the direction and future of their country. It empowers people to have a say in the kind of society they want to live in.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Strengthening Democracy</h5>
+                      <hr class="greenHorizontalLine">
+                      <p class="card-text">Voting is a cornerstone of democracy. When more people participate in the electoral process, it leads to a more robust and representative democracy.</p>
+                    </div>
+                  </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="popup display-none">
+        </div>
+
+        <div class="all-categories text-center" id="votingProcess">
+          <hr class="half-hr"> <h2 class="category-heading text-success" style="font-weight: 900;">Voting Process</h2> <hr class="half-hr">
+        </div>
+        
+
+        <div class="container px-5">
+          <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Registration</h5>
+                    <hr class="greenHorizontalLine">
+                    <p class="card-text">Before you can vote, you usually need to register. This process involves providing personal information such as your name, address, and sometimes identification details.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Check Voter Information</h5>
+                    <hr class="greenHorizontalLine">
+                    <p class="card-text">Verify your voter registration status to ensure it is active and up-to-date.
+                      Confirm your polling place or learn about early voting and mail-in ballot options.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Research Candidates and Issues</h5>
+                    <hr class="greenHorizontalLine">
+                    <p class="card-text">Familiarize yourself with the candidates running for office and the issues on the ballot.
+                      Attend debates, read candidate statements, and research the pros and cons of ballot measures.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Casting Your Vote</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">On Election Day, go to your designated polling place. Bring a valid form of identification if required.
+                    Follow the instructions on the voting machine or paper ballot. Some places use electronic voting machines, while others use paper ballots.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Submit Your Vote</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">After making your selections, submit your ballot according to the instructions provided.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Early Voting and Mail-In Ballots</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">Some regions offer early voting, allowing voters to cast their ballots before Election Day.
+                    Mail-in or absentee voting is available in many places. Request a mail-in ballot if you cannot vote in person.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="all-categories text-center" id="eligibilityCriteria">
+        <hr class="half-hr"> <h2 class="category-heading text-success" style="font-weight: 900;">Eligibility Criteria</h2> <hr class="half-hr">
+      </div>
+      
+
+      <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Citizenship</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">Generally, you must be a citizen of the country in which you are voting.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Age</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">Most places require voters to be a certain age (usually 18 or older). Some jurisdictions allow pre-registration for individuals who will turn 18 before Election Day.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Residency</h5>
+                  <hr class="greenHorizontalLine">
+                  <p class="card-text">You must be a resident of the state or district where you are voting.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Criminal Record</h5>
+                <hr class="greenHorizontalLine">
+                <p class="card-text">In some places, individuals with felony convictions may be ineligible to vote. However, this varies by jurisdiction, and rights may be restored after completing a sentence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="off-white-background my-5" id="testimonials">
+      <h2 class="pb-3">TESTIMONIALS: </h2>
+      <div class="row">
+          <img class="col-lg-6 testimonial-img" src="images/testimonials/image1.jpeg" alt="">
+          <div class="col-lg-6 ms-auto">
+              <!-- <h6 class="h6-heading" >John Doe</h6> -->
+              <p>"Voting has always felt like a distant responsibility, but this time, it was personal. Casting my ballot was more than just a civic duty; it was a profound connection to my community's future. I left the polling station with a sense of pride and empowerment, knowing that my voice had a role in shaping the direction we take. Voting is not just a right; it's a privilege, and I'm grateful to be a part of this democratic journey." - Emily T., First-time Voter"</p>
+          </div>
+      </div>
+
+      <div class="row mt-5">
+          <img class="col-lg-6 testimonial-img" src="images/testimonials/image2.jpeg" alt="">
+          <div class="col-lg-6 ms-auto">
+              <!-- <h6 class="h6-heading" >Jane Doe</h6> -->
+              <p>"In a world filled with noise, voting was my way of making a clear statement. As I marked my choices on the ballot, I felt a surge of optimism for the change we could achieve together. Each vote contributes to the collective voice that guides our society, and I'm proud to be a part of that chorus. Voting isn't just a task; it's an affirmation of our shared values and the belief that we can build a better future, one ballot at a time." - Alex M., Seasoned Voter</p>
+          </div>
+      </div>
+
+      <div class="row mt-5">
+        <img class="col-lg-6 testimonial-img" src="images/testimonials/image3.jpeg" alt="">
+        <div class="col-lg-6 ms-auto">
+            <!-- <h6 class="h6-heading" >Jane Doe</h6> -->
+            <p>"Being an active voter has always been a priority for me, but this election felt especially crucial. As I dropped my ballot in the box, I couldn't help but reflect on the responsibility we have to the generations that follow. Voting is our opportunity to influence policies, protect our rights, and contribute to the ongoing story of our nation. It's not just a civic duty; it's a commitment to the continuous improvement of our society. Today, I voted for tomorrow." - Javier S., Committed Voter</p>
+        </div>
+      </div>
+
+  </div>
+
+
+        <div class="container my-5 text-center about-service">
+          <h2>Your Voice, Your Vote: Shape Tomorrow, Today!</h2>
+          <p>
+            Welcome to VoiceVibes: Empower Your Ballot, where your voice becomes the catalyst for change. In the symphony of democracy, every vote is a note that creates the melody of our shared future. Embrace your civic power, stand up for your values, and make a lasting impact. Together, let's transform the promise of a better tomorrow into a reality. Register now and let your vote echo in the halls of history. The future is in your hands – make it count!
+          </p>
+          <button class="btn btn-success py-2 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">VOTE NOW</button>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+      <div class="container row">
+        <div class="col-lg-4 mb-4">
+          <img src="images/logo.png" class="logo footer-logo mb-5" alt="logo">
+          <i class="fa-solid fa-house pe-2"></i><h6 class="inline">Address</h5>
+          <p class="ms-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, consectetur!</p>
+          <i class="fa-solid fa-envelope pe-2"></i> <p class="inline">Loremabc@123.com</p>
+          <div class="mt-2">
+            <i class="fa-solid fa-phone pe-2"></i><p class="inline">0123456789</p>
+            <p class="ms-4">0123456789</p>
+          </div>
+          <i class="fa-brands fa-facebook-f px-2"></i>
+          <i class="fa-brands fa-twitter px-2"></i>
+          <i class="fa-brands fa-instagram px-2"></i>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <h5 class="pb-3">USEFULL LINKS</h5>
+          <p>Home</p>
+          <p>About us</p>
+          <p>Contact</p>
+        </div>
+
+        <div class="col-lg-4">
+          <h5 class="pb-3">Polling Station Locations</h5>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>vel corrupti possimus architecto, dolorum </li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing </li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- <p class="mt-3">Images gotten from <a href="https://unsplash.com/" target="_blank" class="footer-image-link">Unsplash </a>- <a href="images.html" target="_blank" class="footer-image-link">View more info about images</a></p> -->
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/1dbc5b03e6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
