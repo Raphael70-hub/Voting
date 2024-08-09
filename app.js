@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
@@ -125,23 +124,74 @@ app.get("/vote/:state", function(req,res){
           details: "In response to security concerns, the police in Ibadan have increased patrols around polling stations. This measure aims to provide a safe environment for voters and prevent any potential disturbances."
         }
       ];
+
+      const lagosSecurityUpdates = [
+        {
+          headline: "Increased Police Presence in Surulere Ensures Peaceful Voting",
+          details: "Security forces have been deployed to Surulere Local Government Office to ensure a peaceful voting process. No incidents have been reported so far."
+        },
+        {
+          headline: "Minor Skirmish Quickly Contained Near Ikeja City Hall",
+          details: "A minor skirmish broke out near Ikeja City Hall, but security forces quickly intervened and restored order. No injuries were reported."
+        },
+        {
+          headline: "Lekki Phase 1 Community Center Remains Secure Amid Heightened Tensions",
+          details: "Despite heightened tensions, the Lekki Phase 1 Community Center has remained secure, with increased police patrols ensuring voter safety."
+        }
+      ];
+      
+      const abujaSecurityUpdates = [
+        {
+          headline: "Garki Area Council Voting Location Secure, No Incidents Reported",
+          details: "The Garki Area Council voting location remains secure, with no reports of violence or disturbances. Voters are encouraged to proceed to their designated centers."
+        },
+        {
+          headline: "Security Tightened Around Wuse Zone 3 Primary School",
+          details: "Security has been tightened around Wuse Zone 3 Primary School to prevent any potential disruptions. The situation remains calm and under control."
+        },
+        {
+          headline: "Maitama Amusement Park Voting Location Under Heavy Patrol",
+          details: "Maitama Amusement Park voting location is under heavy patrol, ensuring a safe environment for voters. Authorities report no issues at this time."
+        }
+      ];
+      
+      const ibadanSecurityUpdates = [
+        {
+          headline: "Heavy Security Patrols at Ibadan North Local Government Office Deter Potential Disruptions",
+          details: "Heavy security patrols around Ibadan North Local Government Office have ensured a smooth and peaceful voting process. Voters have expressed confidence in the measures taken."
+        },
+        {
+          headline: "Police Respond to Disturbance Near Molete Baptist Church Polling Station",
+          details: "Police responded to a disturbance near Molete Baptist Church polling station. The situation was quickly brought under control, and voting resumed without further issues."
+        },
+        {
+          headline: "University of Ibadan Main Gate Remains Safe Amid Increased Voter Turnout",
+          details: "The University of Ibadan Main Gate polling station remains safe as security forces manage the increased voter turnout. No security breaches have been reported."
+        }
+      ];
+      
       
 
 
       var news = [{}]
 
+      var safetyNews = [{}]
+
       if (state == "lagos"){
         news = lagosNews
+        safetyNews = lagosSecurityUpdates
       }
       else if (state == "abuja"){
         news = abujaNews
+        safetyNews = abujaSecurityUpdates
       }
       else if (state == "ibadan"){
         news = ibadanNews
+        safetyNews = ibadanSecurityUpdates
       }
 
 
-    res.render("vote", {state:state, locations: locations, news: news})
+    res.render("vote", {state:state, locations: locations, news: news, safetyNews: safetyNews})
 });
   
 
