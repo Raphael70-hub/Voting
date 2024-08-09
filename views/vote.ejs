@@ -67,6 +67,51 @@
     </div>
 
 
+
+    <div class="all-categories text-center">
+        <hr class="half-hr"> <h2 class="category-heading text-success" style="font-weight: 900;">Security Updates</h2> <hr class="half-hr">
+        <p class="text-success mt-3">Stay Informed About Safety and Security Measures at Voting Locations</p>
+    </div>
+    
+
+    <div class="container px-5">
+        <div class="row">
+            <% for(let i=0; i<safetyNews.length; i++){%>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                    <div class="card" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-success"><%=safetyNews[i].headline%></h5>
+                        <hr class="greenHorizontalLine">
+                        <p class="card-text"><%=safetyNews[i].details.substring(0, 50)%>...</p>
+                        <button class="btn btn-success py-2 px-3" data-bs-toggle="modal" data-bs-target="#safetyexampleModal<%=i%>">More details</button>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade mt-5" id="safetyexampleModal<%=i%>" tabindex="-1" aria-labelledby="safetyexampleModal<%=i%>" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-success" id="safetyexampleModal<%=i%>"><%=safetyNews[i].headline%></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="card-text"><%=safetyNews[i].details%></p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <%}%>
+        </div>
+    </div>
+
+
+
+
         
 
 
